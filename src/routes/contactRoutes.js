@@ -12,7 +12,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /create:
+ * /contacts:
  *   post:
  *     tags: [Contatos]
  *     summary: Cria um novo contato
