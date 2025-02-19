@@ -53,11 +53,11 @@ router.post('/create', ContactController.create);
  *           type: string
  *         description: Filtra contatos por nome (opcional)
  *       - in: query
- *         name: endereco
+ *         name: address
  *         required: false
  *         schema:
  *           type: string
- *         description: Filtra contatos pelo endereço (opcional)
+ *         description: Filtra contatos pela cidade (opcional)
  *       - in: query
  *         name: email
  *         required: false
@@ -81,7 +81,7 @@ router.get('/contacts', ContactController.list);
  * /contacts/{id}:
  *   get:
  *     tags: [Contatos]
- *     summary: Exibe um contato específico
+ *     summary: Exibe um contato específico mesmo se estiver desativado
  *     parameters:
  *       - in: path
  *         name: id

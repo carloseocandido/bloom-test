@@ -7,7 +7,11 @@ const options = {
     info: {
       title: 'API Contatos',
       version: '1.0.0',
-      description: 'Documentação de API para Contatos'
+      description: 'Documentação de API para Contatos',
+      contact: {
+        name: 'GitHub Repository',
+        url: 'https://github.com/carloseocandido/bloom-test'
+      }
     },
   },
   apis: ['./src/routes/*.js', './src/models/*.js'],

@@ -25,6 +25,7 @@ class ContactController {
 
             if (address) {
                 filter.address = { $regex: new RegExp(address, 'i') };
+                console.log(filter)
             }
 
             if (email) {
@@ -56,7 +57,7 @@ class ContactController {
                 };
             }));
 
-            res.send(contacts);
+            res.send(contacts.sort((a, b) => a.name.localeCompare(b.name)));
         } catch (error) {
             res.status(500).send({ error: error.message });
         }
@@ -75,12 +76,21 @@ class ContactController {
                 return res.status(404).send({ error: 'Contact not found' });
             }
 
+            const weatherService = new WeatherService(contact.address);
+            let message = await weatherService.getMessage();
+    
+            if (message) {
+                message = message.replace('%s', contact.name);
+            }            
+
             const formattedContact = {
                 id: contact._id,
                 name: contact.name,
                 address: contact.address,
                 phones: contact.phones,
-                email: contact.email
+                email: contact.email,
+                message: message || '',
+                isDeleted: contact.isDeleted
             };
 
             res.send(formattedContact);
