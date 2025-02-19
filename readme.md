@@ -2,6 +2,8 @@
 
 Este é um projeto de API REST para uma agenda telefônica como test sugerido como desafio pela **Bloom** que permite realizar operações básicas de CRUD (criação, listagem, consulta, atualização e deleção lógica) para contatos, além de buscar informações climáticas na cidade do contato para sugerir atividades.
 
+[Documentação da API](https://bloom-test-carlos-candido.onrender.com)
+
 ## Estrutura do Projeto
 
 - **[.gitignore](.gitignore)**: Arquivo para ignorar arquivos e pastas indesejadas no Git.
