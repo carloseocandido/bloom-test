@@ -37,7 +37,7 @@ const router = express.Router();
  *       201:
  *         description: Contato criado com sucesso
  */
-router.post('/create', ContactController.create);
+router.post('/contacts', ContactController.create);
 
 /**
  * @swagger
