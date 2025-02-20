@@ -19,7 +19,7 @@ class WeatherService {
 
             return {
                 temp: res.data.results.temp,
-                description: res.data.results.description
+                description: res.data.results.description.toLowerCase()
             };
 
         } catch (error) {
@@ -31,7 +31,7 @@ class WeatherService {
     async getMessage() {
         const weatherData = await this.#getWeather();
         const { temp, description } = weatherData;
-
+        console.log({ temp, description });
         const messages = [
             { condition: temp <= 18, message: 'Gostaria de um chocolate %s?' },
             { condition: temp >= 30 && description.includes('ensolarado'), message: 'Gostaria de ir para a praia %s?' },
