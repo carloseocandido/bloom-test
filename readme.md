@@ -12,10 +12,14 @@ Este é um projeto de API REST para uma agenda telefônica como test sugerido co
 - **[server.js](server.js)**: Inicializa o servidor e importa o aplicativo a partir de [`src/app.js`](src/app.js).
 - **[test.md](test.md)**: Documentação dos requisitos e regras do teste.
 - **[readme.md](readme.md)**: Este arquivo de documentação.
+- **[Dockerfile](Dockerfile)**: Configuração do Docker para criar a imagem do aplicativo.
+- **[docker-compose.yml](docker-compose.yml)**: Configuração do Docker Compose para orquestrar os serviços do aplicativo e do MongoDB.
 
 Dentro da pasta **src/**:
 
-- **[app.js](src/app.js)**: Configuração do Express, conexão com o MongoDB e definição das rotas.
+- **[app.js](src/app.js)**: Configuração do Express, e definição das rotas.
+- **config/**
+  - **[database.js](src/config/database.js)**: Conexão com o mongoDB.
 - **controllers/**
   - **[ContactController.js](src/controllers/ContactController.js)**: Lógica dos endpoints para criação, listagem, exibição, atualização e deleção (lógica) de contatos.
 - **models/**
@@ -31,6 +35,7 @@ Dentro da pasta **src/**:
 ## Pré-requisitos
 
 - Node.js (versão LTS recomendada)
+- Docker e Docker Compose
 - MongoDB (ou utilização do MongoDB In-Memory para testes)
 
 ## Instalação
@@ -39,6 +44,7 @@ Para instalar as dependências, execute:
 ```sh
 npm install
 ```
+
 ## Execução
 
 Para iniciar o servidor:
@@ -49,6 +55,11 @@ npm start
 Para iniciar em modo de desenvolvimento com recarga automática:
 ```sh
 npm run dev
+```
+
+Para iniciar o servidor e o MongoDB com Docker Compose:
+```sh
+docker-compose up
 ```
 
 ## Testes
