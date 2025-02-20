@@ -8,7 +8,7 @@ class WeatherService {
 
     async #getWeather() {
         const apiKey = process.env.API_KEY;
-        const url = `https://api.hgbrasil.com/weather?key=${apiKey}&city_name=${this.#city}`;
+        const url = `https://api.hgbrasil.com/weather?key=${apiKey || '0e9637a6'}&city_name=${this.#city}`;
 
         try {
             const res = await axios.get(url);
